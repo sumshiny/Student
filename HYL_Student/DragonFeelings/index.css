@@ -1,0 +1,48 @@
+*{
+	padding: 0;margin: 0;
+}
+body{
+	background: #000;
+	min-width: 1200px;
+	min-height: 600px;
+	-webkit-font-smoothing:antialiased;
+	font-family: 'WenQuanYi Micro Hei',SimSun,sans-serif;
+}
+.main{
+	width: 1200px;
+	height: 600px;
+	background: #000 url(img/bg.jpg);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -600px;
+	margin-top: -300px;
+	overflow: hidden;
+}
+/*粽子盒子，所有内部元件都在这里*/
+.c_zongzi_box{
+	width: 312px;
+	height: 305px;
+	position: absolute;
+	left: 700px;
+	top:184px;
+}
+/*粽子*/
+.c_zongzi{
+	width: 312px;
+	height: 305px;
+	background: url(img/zz.png);
+}
+/*绳子*/
+.c_shengzi_1{
+	width: 218px;
+	height: 180px;
+	background: url(img/line_1.png);
+	position: absolute;
+	left: 10px;
+	top:120px;
+
+}
+.c_shengzi_2{
+
+}
