@@ -45,7 +45,7 @@ body{
 }
 
 .slider .main .main-i .caption h3{
-	font-size: 70px;
+	font-size: 40px;
 	line-height: 70px;
 	color: #000000;
 	text-align: right;
@@ -126,14 +126,19 @@ body{
 
 .slider .main .main-i h2,
 .slider .main .main-i h3{
-	-webkit-transition:all .8s 1s;
+	/*opacity: 0;*/
+	-webkit-transition:all 1s .8s;
 }
 
 .slider .main .main-i_active{
+	right: 0;
 	opacity: 1;
-
 }
 .slider .main .main-i_active h2，
 .slider .main .main-i_active h3{
 	margin-right: 0px;
+	opacity: 1;
+}
+.slider .main .main-i .caption{
+	margin-right: 13%;
 }

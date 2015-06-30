@@ -7,31 +7,23 @@
 	</head>
 	<body>
 		<div class="slider">
-			<div class="main">
-				<div class="main-i main-i_active">
+			<!--0.修改View->Template(关键字替换),增加template id-->
+			<div class="main" id="template_main">
+				<div class="main-i" id="main_{{index}}">
 					<div class="caption">
-						<h2>H2 Caption</h2>
-						<h3>H3 Caption</h3>
+						<h2>{{h2}}</h2>
+						<h3>{{h3}}</h3>
 					</div>
-					<img src="images/1.jpg">
-				</div> 
-				<div class="main-i">
-					<div class="caption">
-						<h2>H2 Caption</h2>
-						<h3>H3 Caption</h3>
-					</div>
-					<img src="images/1.jpg">
+					<img src="images/{{index}}.jpg">
 				</div> 
 			</div>
 			
-			<div class="ctrl">
-				<a href="javascript:void(0)" class="ctrl-i ctrl-i_active">
-					<img src="images/1.jpg">
-				</a>
-				<a href="javascript:void(0)" class="ctrl-i">
-					<img src="images/1.jpg">
+			<div class="ctrl" id="template_ctrl">
+				<a id="ctrl_{{index}}" href="javascript:switchSlider({{index}})" class="ctrl-i">
+					<img src="images/{{index}}.jpg">
 				</a>
 			</div>
 		</div>
+		<script type="text/javascript" src="index.js"></script>
 	</body>
 </html>
