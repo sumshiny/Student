@@ -44,12 +44,21 @@ function addSliders(){
 	//3.4 把所有的HTML回写到对应的DOM里面
 	g('template_main').innerHTML=out_main.join('');
 	g('template_ctrl').innerHTML=out_ctrl.join('');
+
+	//7.增加#main_background
+	g("template_main").innerHTML+=tpl_main.replace(/{{index}}/g,'{{index}}')
+						.replace(/{{h2}}/g,data[i].h1)
+						.replace(/{{h3}}/g,data[i].h2);
+	g('main_{{index}}').id='main_background';
 }
 
 //4.定义何时处理幻灯片输出
 window.onload=function(){
 	addSliders();
 	switchSlider(1);
+	setTimeout(function(){
+		movePictures()
+	},100);
 }
 
 //5.幻灯片切换
@@ -73,4 +82,18 @@ function switchSlider(n){
 	//5.4 为当前控制按钮和幻灯片附加样式
 	main.className+=' main-i_active';
 	ctrl.className+=' ctrl-i_active';
+
+	//8.切换时，复制上一张幻灯片到main_background中
+	setTimeout(function(){
+		g('main_background').innerHTML=main.innerHTML;
+	},1000);
+	
+}
+
+//6.动态调整图片的margin-top 已使其垂直居中
+function movePictures(){
+	var pictures=g('.picture');
+	for(i=0;i<pictures.length;i++){
+		pictures[i].style.marginTop=(-1*pictures[i].clientHeight/2)+'px';
+	}
 }
